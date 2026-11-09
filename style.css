@@ -205,7 +205,7 @@ footer .btns { justify-content: center; }
 .note { font-size: .82rem; color: var(--muted); border: 1px dashed #c7cdda; border-radius: var(--radius); padding: 12px 16px; }
 
 /* ---- Mobile ---- */
-@media (max-width: 760px) {
+@media screen and (max-width: 760px) {
   .nav .links { display: none; }
   .hero { flex-direction: column; text-align: center; }
   .contact, .btns { justify-content: center; }
@@ -221,4 +221,27 @@ footer .btns { justify-content: center; }
   .timeline div::after { top: 5px; left: 0; margin-left: 0; }
   .ch .no { font-size: 1.8rem; }
   section { padding: 36px 0; }
+}
+
+/* ---- Print / PDF ---- */
+.print-only { display: none; }
+@page { size: A4; margin: 12mm 12mm 14mm; }
+@media print {
+  html, body { font-size: 13px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .wrap { max-width: none; padding: 0; }
+  .nav, .no-print, .video { display: none !important; }
+  .print-only { display: block; }
+  section { padding: 22px 0; }
+  section.first { padding-top: 0; }
+  .lead { margin-bottom: 14px; }
+  .strip { margin-top: 16px; }
+  .vcard img { aspect-ratio: 4 / 5; }
+  .film { grid-template-columns: 1fr; }
+  .stat, .svc, .feature, .case, .vcard, .film, .gal, .process div, .modes div, .job,
+  .vs > div, .find div, .pillars div, .tracks div, .big-result, .insight, .timeline { break-inside: avoid; page-break-inside: avoid; }
+  h2, h3 { break-after: avoid; page-break-after: avoid; }
+  #services, #cases, #graphics { break-before: page; page-break-before: always; }
+  footer { padding: 26px 20px; break-inside: avoid; }
+  .case-page footer { display: none; }
+  a { text-decoration: none; }
 }
