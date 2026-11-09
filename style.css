@@ -109,7 +109,7 @@ strong.n { color: var(--accent); }
 .role-line b { color: var(--text); font-weight: 500; }
 
 /* ---- Video ---- */
-.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .vcard { border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; text-decoration: none; color: inherit; transition: box-shadow .15s, transform .15s; display: flex; flex-direction: column; }
 .vcard:hover, .product:hover { box-shadow: 0 6px 18px rgba(46,64,111,.12); transform: translateY(-2px); }
 .vcard img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 8px; background: var(--accent-soft); margin-bottom: 10px; }
